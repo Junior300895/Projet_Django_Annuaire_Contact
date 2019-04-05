@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'annuaire/bs/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'annuaire/css/style.css' %}">
+    <script src="{% static 'annuaire/js/jquery.js' %}"></script>
+{#    <script>#}
+{#    $(document).ready(function(){#}
+{#        #}
+{#    });#}
+{#    </script>#}
+</head>
+{% include 'annuaire/header.html' %}
+<body>
+<h1>Liste des contacts</h1>
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Prénom</th><th>Nom</th><th>Numéro</th><th>Email</th><th>Adresse</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in list_contacts %}
+            <tr>
+                <td>{{ contact.prenom }}</td>
+                <td>{{ contact.nom }}</td>
+                <td class="success">{{ contact.numero }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.adresse }}</td>
+            </tr>
+        </tbody>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">
+            <h4 class="list-group-item-heading">Prénom: {{ contact.prenom }} Nom: {{ contact.nom }}</h4>
+            <p class="list-group-item-text"><span class="badge">Numéro: {{ contact.numero }}</span> Email: {{ contact.email}}</p>
+          </a>
+        </div>
+        {% endfor %}
+    </table>
+
+    </div>
+</div>
+</body>
+{% include 'annuaire/footer.html' %}
+</html>
