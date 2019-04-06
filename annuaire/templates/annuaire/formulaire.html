@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'annuaire/bs/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'annuaire/css/style.css' %}">
+    <script src="{% static 'annuaire/js/jquery.js' %}"></script>
+</head>
+{% include 'annuaire/header.html' %}
+<body>
+<h1>Ajout de contact</h1>
+<div class="row">
+<div class="col-sm-offset-3 col-sm-3">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_table }}
+        </div>
+        <input type="submit" value="Ajouter">
+    </form>
+</div>
+</div>
+</body>
+{% include 'annuaire/footer.html' %}
+</html>
