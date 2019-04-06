@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 
 from annuaire.forms import ContactForm
@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse("Salut le monde, vous êtes à la page annuaire")
 
 def listercontact(request):
-    list_contacts = Contact.objects.all()
+    list_contacts = Contact.objects.order_by('prenom').all()
     context = {'list_contacts': list_contacts}
     return render(request, 'annuaire/contacts.html', context)
 
@@ -37,3 +37,8 @@ def get_contact_form(request):
         form = ContactForm()
 
     return render(request, 'annuaire/formulaire.html', {'form': form})
+
+def get_contacts_details(request, contact_id):
+    contact = get_object_or_404(Contact,pk = contact_id)
+    return render(request, 'annuaire/contacts_details.html', {'contact': contact})
+

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'annuaire/bs/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'annuaire/css/style.css' %}">
+    <script src="{% static 'annuaire/js/jquery.js' %}"></script>
+    <script src="{% static 'annuaire/js/my_jquery_functions.js' %}"></script>
+</head>
+{% include 'annuaire/header.html' %}
+<body>
+<h1>Information du contact</h1>
+<div class="container col-sm-offset-3 col-sm-4">
+    {% if contact %}
+
+    <div class="form-group">
+        <label>Prenom</label>
+        <input type="text" class="form-control" value="{{ contact.prenom }}">
+    </div>
+    <div class="form-group">
+        <label>Nom</label>
+        <input type="text" class="form-control" value="{{ contact.nom }}">
+    </div>
+        <div class="form-group">
+        <label>Numéro</label>
+        <input type="text" class="form-control" value="{{ contact.numero }}">
+    </div>
+        <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" value="{{ contact.email }}">
+    </div>
+        <div class="form-group">
+        <label>Adresse</label>
+        <input type="text" class="form-control" value="{{ contact.adresse }}">
+    </div>
+
+    {% endif %}
+</div>
+</body>
+</html>
