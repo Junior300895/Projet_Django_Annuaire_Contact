@@ -15,10 +15,10 @@
 <div class="col-sm-offset-3 col-sm-3">
     <form action="" method="post">
         {% csrf_token %}
-        <div class="form-group">
+        <table class="table">
             {{ form.as_table }}
-        </div>
-        <input type="submit" value="Ajouter">
+        </table>
+        <input type="submit" class="btn btn-primary" value="Ajouter">
     </form>
 </div>
 </div>

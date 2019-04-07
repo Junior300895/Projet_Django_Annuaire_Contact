@@ -12,7 +12,12 @@
 {% include 'annuaire/header.html' %}
 <body>
 <h1>Information du contact</h1>
-<div class="container col-sm-offset-3 col-sm-4">
+<div class="row">
+<div class="col-sm-offset-1 col-sm-2">
+{#    <img src="https://img.icons8.com/metro/104/000000/contacts.png" class="img-rounded" width="250">#}
+    <img src="{% static 'annuaire/photo/img1.png' %}" class="img-rounded" width="200">
+</div>
+<div class="col-sm-offset-1 col-sm-4">
     {% if contact %}
 
     <div class="form-group">
@@ -37,6 +42,13 @@
     </div>
 
     {% endif %}
+</div>
+<div class="col-sm-offset-2 col-sm-1">
+    <div class="btn-group-vertical">
+        <button class="btn btn-danger">Modifier</button>
+        <button class="btn btn-warning">Supprimer</button>
+    </div>
+</div>
 </div>
 </body>
 </html>

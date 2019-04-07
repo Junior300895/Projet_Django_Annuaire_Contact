@@ -5,3 +5,11 @@
 //             // {#print("contact séléctionné") c'est bizarre anh ici#}
 //         })
 // });
+
+$(document).ready(function(){
+        $("#recherche").autocomplete(function () {
+                source:
+            $()
+            // {#print("contact séléctionné") c'est bizarre anh ici#}
+        })
+});

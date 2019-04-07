@@ -6,3 +6,4 @@ class ContactForm(forms.Form):
     numero = forms.CharField(label='Numéro', max_length=10)
     email = forms.EmailField(label='Email', max_length=20)
     adresse = forms.CharField(label='Adresse', max_length=20)
+    # image = forms.ImageField(label='Adresse')

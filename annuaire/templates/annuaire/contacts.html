@@ -8,20 +8,24 @@
     <link rel="stylesheet" type="text/css" href="{% static 'annuaire/css/style.css' %}">
     <script src="{% static 'annuaire/js/jquery.js' %}"></script>
     <script src="{% static 'annuaire/js/my_jquery_functions.js' %}"></script>
+
 </head>
 {% include 'annuaire/header.html' %}
 <body>
-<h1>Mes contacts</h1>
+<h1>Mes contacts  </h1>
     <div class="col-sm-offset-3 col-sm-6">
         {% for contact in list_contacts %}
         <div class="list-group">
-          <a href="{% url 'contacts_details' contact.id %}" class="list-group-item active" id="contact">
-{#            <h4 class="list-group-item-heading">{{ contact.prenom }} {{ contact.nom | upper }}</h4>#}
-{#            <p class="list-group-item-text"><span class="badge">Numéro: {{ contact.numero }}</span> Email: {{ contact.email}}</p>#}
-            <h4 class="list-group-item-heading">{{ contact.prenom }} {{ contact.nom | upper }}</h4>
+          <a href="{% url 'contacts_details' contact.id %}" class="list-group-item-danger active" id="contact">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{ contact.prenom }} {{ contact.nom | upper }}</div>
+                </div>
+            </div>
           </a>
         </div>
         {% endfor %}
+
     </div>
 </div>
 </body>
